@@ -103,7 +103,7 @@ def generate_masks(MODEL_PATH, image_folder, masks_folder):
     if MODEL_PATH:
         model = load_model(MODEL_PATH)
     else:
-        MODEL_PATH = "/raid/mpsych/CACTAS/DATA/FMA/unet_Fluo_clip_v2.h5"
+        MODEL_PATH = "/.../unet_Fluo.h5"
         model = load_model(MODEL_PATH)
 
     ###### Generating Masks #######
@@ -1376,7 +1376,6 @@ def save_phase_video(video, trajectories, rise, decay, output_path):
 
             x0, y0 = sub[-1]
             cv2.circle(img_rgb, (int(x0), int(y0)), 3, (255, 255, 255), -1)
-
         writer.write(img_rgb)
 
     writer.release()

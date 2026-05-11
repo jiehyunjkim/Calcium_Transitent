@@ -21,8 +21,8 @@ import util as U
 # ============================================================
 # CONFIG
 # ============================================================
-BASE = "/raid/mpsych/CACTAS/DATA/FMA/drug"
-OUTPUT_DIR = "/raid/mpsych/CACTAS/DATA/FMA/motion"
+BASE = "/.../drug"
+OUTPUT_DIR = "/.../motion"
 CSV_PATH = os.path.join(OUTPUT_DIR, "all_results_rebuttal.csv")
 
 def build_case_list():
