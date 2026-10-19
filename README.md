@@ -7,7 +7,11 @@ This project analyzes motion in calcium fluorescence videos of engineered cardia
 
 ![Pipeline](/viz/pipeline.png)
 
-The pipeline first segments the tissue in each video frame. It then extracts a calcium fluorescence signal and uses its peaks to identify contraction (rise) and relaxation (decay) phases. Lucas–Kanade optical flow tracks motion within the tissue. A 3 × 2 grid divides the tissue into six regions, where velocity, motion direction, directional consistency, and velocity variation are measured separately for each phase.
+1) Segments the tissue in each video frame.
+2) Extracts a calcium fluorescence signal
+3) Uses its peaks to identify contraction (rise) and relaxation (decay) phases
+4) Lucas–Kanade optical flow tracks motion within the tissue
+5) A 3 × 2 grid divides the tissue into six regions, where velocity, motion direction, directional consistency, and velocity variation are measured separately for each phase.
 
 ## Ablation Study
 
@@ -32,4 +36,7 @@ We compared five analysis settings to see how combining phases or tissue regions
 | D vs. E | Contraction velocity relative to E | 53.8 ± 19.2% |
 | D vs. E | Relaxation velocity relative to E | 47.8 ± 18.5% |
 
-Combining contraction and relaxation (C) reduced directional consistency from **0.835 to 0.365**. Removing the six-region division (D) lowered measured contraction and relaxation velocities by about **46% and 52%**, respectively. These comparisons show that the choice of time windows and tissue regions can substantially change optical flow measurements. They do not measure ground-truth motion accuracy.
+1) Combining contraction and relaxation (C) reduced directional consistency from **0.835 to 0.365**. 
+2) Removing the six-region division (D) lowered measured contraction and relaxation velocities by about **46% and 52%**, respectively.
+
+These results show that temporal and spatial division affect velocity and directional-consistency analysis.
